@@ -6,6 +6,7 @@ public class ItemCollector : MonoBehaviour
 {
     private int collectedStrawberries = 0;
     [SerializeField] private Text strawberriesText = null;
+    [SerializeField] private AudioSource collectSFX;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +23,7 @@ public class ItemCollector : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Strawberry")) 
         {
+            collectSFX.Play();
             Destroy(collision.gameObject);
             collectedStrawberries++;
             Debug.Log("Strawberries collected: " + collectedStrawberries);

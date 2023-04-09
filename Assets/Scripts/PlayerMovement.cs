@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float jumpForce = 14f;
     [SerializeField] private float moveSpeed = 6f;
     [SerializeField] private LayerMask ground;
+    [SerializeField] private AudioSource jumpSFX;
     
     //enum for storing different movement states
     private enum MoveState
@@ -41,6 +42,7 @@ public class PlayerMovement : MonoBehaviour
         body.velocity = new Vector2(dirX * moveSpeed, body.velocity.y);
         if (Input.GetButtonDown("Jump") && IsOnGround()) //only jump if on ground
         {
+            jumpSFX.Play();
             body.velocity = new Vector2(body.velocity.x, jumpForce);
         }
         UpdateAnimationState();
