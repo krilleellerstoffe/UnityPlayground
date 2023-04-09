@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -43,7 +44,25 @@ public class PlayerMovement : MonoBehaviour
             body.velocity = new Vector2(body.velocity.x, jumpForce);
         }
         UpdateAnimationState();
+        LookInMouseDirection();
     }
+    //Orient player sprite in mouse's direction
+    private void LookInMouseDirection()
+    {
+        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+        Vector2 direction = mousePosition - transform.position;
+        float angle = Vector2.SignedAngle(Vector2.up, direction);
+        if (angle < 0.1f)
+        {
+            spriteRenderer.flipX = false;
+        }
+        else
+        {
+            spriteRenderer.flipX = true;
+        }
+    }
+
     //Updates the sprite's animation based on movement
     private void UpdateAnimationState()
     {
@@ -51,12 +70,12 @@ public class PlayerMovement : MonoBehaviour
        
         if(dirX > 0f) //if moving to right
         {
-            spriteRenderer.flipX = false;
+            //spriteRenderer.flipX = false;
             moveState = MoveState.running;
         }
         else if(dirX < 0f) //if moving to left
         {
-            spriteRenderer.flipX = true;
+            //spriteRenderer.flipX = true;
             moveState = MoveState.running;
         }
         else //if still
