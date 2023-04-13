@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private float dirX;
     [SerializeField] private float jumpForce = 14f;
+    [SerializeField] private float dashForce = 4f;
     [SerializeField] private float moveSpeed = 6f;
     [SerializeField] private LayerMask ground;
     [SerializeField] private AudioSource jumpSFX;
@@ -21,7 +22,8 @@ public class PlayerMovement : MonoBehaviour
         idling,
         running,
         jumping,
-        falling
+        falling,
+        dashing
     }
      
 
@@ -44,6 +46,11 @@ public class PlayerMovement : MonoBehaviour
         {
             jumpSFX.Play();
             body.velocity = new Vector2(body.velocity.x, jumpForce);
+        }
+        if (Input.GetButtonDown("Fire1"))
+        {
+            //dashSFX.Play();
+            body.velocity = new Vector2(dashForce, body.velocity.y);
         }
         UpdateAnimationState();
         LookInMouseDirection();
@@ -68,33 +75,33 @@ public class PlayerMovement : MonoBehaviour
     //Updates the sprite's animation based on movement
     private void UpdateAnimationState()
     {
-        MoveState moveState;
+        MoveState newMoveState;
        
         if(dirX > 0f) //if moving to right
         {
             //spriteRenderer.flipX = false;
-            moveState = MoveState.running;
+            newMoveState = MoveState.running;
         }
         else if(dirX < 0f) //if moving to left
         {
             //spriteRenderer.flipX = true;
-            moveState = MoveState.running;
+            newMoveState = MoveState.running;
         }
         else //if still
         {
-            moveState = MoveState.idling;
+            newMoveState = MoveState.idling;
         }
         
         if(body.velocity.y > 0.1f) //if jumping
         {
-            moveState = MoveState.jumping;
+            newMoveState = MoveState.jumping;
         }
         else if (body.velocity.y < -0.1f) //if falling
         {
-            moveState = MoveState.falling;
+            newMoveState = MoveState.falling;
         }
         //set animation based on moveState
-        animator.SetInteger("moveState", (int)moveState);
+        animator.SetInteger("moveState", (int)newMoveState);
     }
     //Creates a boxcollider slightly lower than the player sprite's
     //returns true if it is touching the ground
