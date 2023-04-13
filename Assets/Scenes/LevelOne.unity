@@ -9432,16 +9432,6 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
-  - first: {x: 0, y: 0, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 8
-      m_TileSpriteIndex: 8
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
   - first: {x: 1, y: 0, z: 0}
     second:
       serializedVersion: 2
@@ -20060,7 +20050,7 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 55dece79c336fc4418870175995468a0, type: 2}
   - m_RefCount: 108
     m_Data: {fileID: 11400000, guid: b60f3a2a613f41f4f88eff18bbeebd55, type: 2}
-  - m_RefCount: 108
+  - m_RefCount: 107
     m_Data: {fileID: 11400000, guid: 4c963135a22e56047b30f70330372aa6, type: 2}
   - m_RefCount: 108
     m_Data: {fileID: 11400000, guid: 6857f973c1281e844ae78888a7ae44e2, type: 2}
@@ -20093,7 +20083,7 @@ Tilemap:
     m_Data: {fileID: 1564362390, guid: ca6a66f8e2ae9c24c8c6b39c49206a0d, type: 3}
   - m_RefCount: 108
     m_Data: {fileID: -1578960781, guid: ca6a66f8e2ae9c24c8c6b39c49206a0d, type: 3}
-  - m_RefCount: 108
+  - m_RefCount: 107
     m_Data: {fileID: 323318619, guid: ca6a66f8e2ae9c24c8c6b39c49206a0d, type: 3}
   - m_RefCount: 108
     m_Data: {fileID: 299634581, guid: ca6a66f8e2ae9c24c8c6b39c49206a0d, type: 3}
@@ -20110,7 +20100,7 @@ Tilemap:
   - m_RefCount: 108
     m_Data: {fileID: 1434368699, guid: ca6a66f8e2ae9c24c8c6b39c49206a0d, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 1728
+  - m_RefCount: 1727
     m_Data:
       e00: 1
       e01: 0
@@ -20129,7 +20119,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 1728
+  - m_RefCount: 1727
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -20654,11 +20644,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2268692295634408293, guid: 2de9fbceff66f5941bd30219c2b48f2d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.75
+      value: -4.86
       objectReference: {fileID: 0}
     - target: {fileID: 2268692295634408293, guid: 2de9fbceff66f5941bd30219c2b48f2d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.24
+      value: -0.987
       objectReference: {fileID: 0}
     - target: {fileID: 2268692295634408293, guid: 2de9fbceff66f5941bd30219c2b48f2d, type: 3}
       propertyPath: m_LocalPosition.z
